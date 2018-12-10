@@ -3,26 +3,27 @@
 <head>
    <link rel="stylesheet" href="styles/styles.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
     <title>WOWair | 99 verhalen voor op reis</title>
 </head>
 
 <body>
-    <header class="head"> <!-- intro voor de verhalen website -->
+    <header> <!-- intro voor de verhalen website -->
        <nav>
           <ul>
               <li>
                   <img src="img/logo.png" alt="">
               </li>
-              <li>account</li>
-              <li>downloads</li>
+              <li><a href="alleverhalen.html"></a><h2>Alle verhalen</h2></li>
+              <li><a href="mijnverhalen.html"></a><h2>Mijn verhalen</h2></li>
           </ul>
        </nav>
     </header>
 <h1>wow verhalen</h1>
-<h2>99 verhalen voor tijdens jouw reis</h2>
+<p class="verhalen">99 verhalen voor op reis</p>
 <!-- Filter opties, one action per screen -->
     <form>
-        <fieldset id="gevoel">Gevoel</fieldset>
+        <fieldset id="gevoel"><legend>Gevoel</legend></fieldset>
         <button>energiek</button>
         <button>geamuseerd</button>
         <button>gelukkig</button>
@@ -32,7 +33,8 @@
         <button>opgewonden</button>
         <button class="wow">wow</button>
 
-        <fieldset id="genre">Genre</fieldset>
+        <fieldset id="genre">
+        <legend>Genre</legend></fieldset>
         <button>biografie</button>
         <button>detective</button>
         <button>fantasie</button>
@@ -42,13 +44,15 @@
         <button>thriller</button>
         <button class="wow">wow</button>
 
-        <fieldset id="tijd">Tijd</fieldset>
+        <fieldset id="tijd">
+        <legend>Tijd</legend></fieldset>
         <button>1-2 min</button>
         <button>2-5 min</button>
         <button>5-10 min</button>
         <button>10-15 min</button>
 
-       <fieldset id="kleur">Kleur</fieldset>
+       <fieldset id="kleur">
+       <legend>Kleur</legend></fieldset>
         <button>licht</button>
         <button>fel</button>
         <button>hoog contrast</button>
@@ -59,26 +63,24 @@
 
 <!-- verhalen op basis van populariteit als de user naar beneden scrollt -->
     <section>
-     <h2>of lees ze allemaal</h2>
+     <h3>of lees ze allemaal</h3>
       <article>
-         <header>
               <img src="img/tumbnail%20stoned.png" alt="">
-              <h3>Stoned</h3>
+              <h4>Stoned</h4>
               <button class="download">Downloaden</button>
               <p>verhaal Stoned</p>
-          </header>
       </article>
 
       <article>
                <img src="img/tumbnail%20stoned.png" alt="">
-                <h3>Droom</h3>
+                <h4>Droom</h4>
               <button class="download">Downloaden</button>
               <p>verhaal Stoned</p>
       </article>
 
       <article>
            <img src="img/tumbnail%20stoned.png" alt="">
-              <h3>Verliefd</h3>
+              <h4>Verliefd</h4>
               <button class="download">Downloaden</button>
               <p>verhaal Stoned</p>
       </article>

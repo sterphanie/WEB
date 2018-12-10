@@ -1,13 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     font-family: museo-sans,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.42857143;
     color: #2b4040;
-    background-color: #fff;
+    background-color: #89328A;
+    margin-top: 10em;
+}
+
+h1{
+    font-size: 2em;
+    color: white;
+}
+p.verhalen{
+    font-size: 1em;
+    color: white;
+}
+
+h3{
+    color: white;
 }
 
 /*HEADER*/
-header.head{
+header{
     position: fixed;
     top:0;
     left:0;
@@ -16,7 +34,7 @@ header.head{
     z-index: 1;
 }
 
-header.head ul{
+header ul{
     list-style: none;
     padding: 0;
     display: flex;
@@ -24,26 +42,35 @@ header.head ul{
 
 }
 
-header.head li:first-child{
+header li:first-child{
     margin-right: auto;
 }
 
-header.head li{
+header li{
     margin: 1em;
 }
 
-header.head img {
-    width:3cm;
-    height: 3cm;
+header img {
+    width:2cm;
+    height:2cm;
     object-fit: cover;
     object-position: center center;
 
 }
 
 /*VERHALEN*/
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section h2{
+    width: 100%;
+}
 article{
     display: block;
-    border: 1px, solid, #89328A;
+    border: 1em, solid, #89328A;
     background-color: #F1BE4D;
     max-width: 20em;
     position: relative;
@@ -57,7 +84,7 @@ article img{
     object-position: center center;
 }
 
-article h3, article p {
+article h4, article p {
     margin: 1rem;
 }
 
@@ -67,10 +94,10 @@ button.download{
     left: 1em;
     background-color:#FBDD72;
     color: #89328A;
-    font-size: 16px;
+    font-size: 1em;
 }
 
-h3{
+h4{
     border-bottom: solid #89328A;
 }
 
@@ -80,28 +107,30 @@ form{
     border: solid #89328A;
     max-width: 20em;
     position: relative;
-
+    display: flex;
+    flex-wrap: wrap;
 }
+
 
 form>fieldset{
     background-color: #89328A;
     color: white;
-    font-size: 20px;
-    margin: 8px;
+    font-size: 1.2em;
+    margin: .3em;
+    width: 100%;
+    border: none;
 }
 
 form>button{
     background-color: #FBDD72;
     color: #2b4040;
-    font-size: 16px;
-    padding: 1em 2em;
-    box-sizing: border-box;
-    border: 1em;
-    margin: 8px;
+    font-size: 1em;
+    border: 0.2em solid #FBDD72;
+    width: 50%;
 }
 
 form>button:hover{
-    border: solid #89328A;
+    border-color: #89328A;
 }
 
 form>button.wow{
