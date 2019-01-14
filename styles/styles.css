@@ -3,25 +3,40 @@
 }
 
 body{
-    font-family: museo-sans,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: museo-sans,"Helvetica Neue",Helvetica,sans-serif;
     font-size: 1em;
     line-height: 1.42857143;
     color: #2b4040;
-    background-color: #89328A;
     margin-top: 10em;
+
+}
+
+section.heading{
+    background-image: url(../img/wow-air.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30em;
+    margin-top: -5em
+
 }
 
 h1{
     font-size: 2em;
     color: white;
+    margin-top: 4em;
+    margin-left: 4em;
+
 }
 p.verhalen{
     font-size: 1em;
     color: white;
+    margin-top: 12em;
+    margin-left: -12em;
+
 }
 
-h3{
-    color: white;
+h2{
+    color: #89328A;
 }
 
 /*HEADER*/
@@ -32,6 +47,14 @@ header{
     right:0;
     background: white;
     z-index: 1;
+    margin: 0;
+}
+
+@media (max-width:25em){
+    header{
+        bottom: 0;
+        top: initial;
+    }
 }
 
 header ul{
@@ -39,6 +62,9 @@ header ul{
     padding: 0;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+    max-height: 3em;
+    margin: 0;
 
 }
 
@@ -51,11 +77,81 @@ header li{
 }
 
 header img {
-    width:2cm;
-    height:2cm;
-    object-fit: cover;
-    object-position: center center;
+    max-height: 3em;
+    max-width: 3em;
+    display: block;
+    margin: 0em 1em;
+}
 
+/*FILTER*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -28em;
+
+}
+
+details{
+    width: 20em;
+    background-color: white;
+
+}
+
+form{
+    width: 100%;
+}
+form, summary:-webkit-details-marker {
+    display: none;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+legend{
+    display: none;
+}
+
+fieldset{
+    border: none;
+    min-width: 100%;
+}
+summary{
+    background-color: #89328A;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+}
+
+/* radio input buiten beeld*/
+form input[type=radio] {
+    position: absolute;
+    left:-666em;
+}
+
+form ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding:0;
+    min-width: 100%;
+}
+form li{
+    background-color: #FBDD72;
+    color: #2b4040;
+    font-size: 1em;
+    border: 0.1em solid #FBDD72;
+    list-style: none;
+    margin: .2em;
+    text-align: center;
+}
+
+form li:hover{
+    border-color: #89328A;
+}
+
+form li.wow{
+    background-color: #89328A;
+    color: #FBDD72;
 }
 
 /*VERHALEN*/
@@ -68,12 +164,17 @@ section{
 section h2{
     width: 100%;
 }
+section h3 {
+    display: none;
+}
 article{
     display: block;
-    border: 1em, solid, #89328A;
-    background-color: #F1BE4D;
+    border: 1px solid gray;
+    background-color: white;
     max-width: 20em;
+    margin: 1em;
     position: relative;
+
 }
 
 article img{
@@ -84,56 +185,18 @@ article img{
     object-position: center center;
 }
 
-article h4, article p {
-    margin: 1rem;
-}
 
-button.download{
+button.like{
     position: absolute;
-    top: 1em;
+    top: 13em;
     left: 1em;
-    background-color:#FBDD72;
-    color: #89328A;
-    font-size: 1em;
+    height: 2em;
+    width: 5em;
+    background-image: url(../img/1003.png);
+    background-size: cover;
 }
 
 h4{
     border-bottom: solid #89328A;
 }
 
-/*FILTER*/
-form{
-    background-color: white;
-    border: solid #89328A;
-    max-width: 20em;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-form>fieldset{
-    background-color: #89328A;
-    color: white;
-    font-size: 1.2em;
-    margin: .3em;
-    width: 100%;
-    border: none;
-}
-
-form>button{
-    background-color: #FBDD72;
-    color: #2b4040;
-    font-size: 1em;
-    border: 0.2em solid #FBDD72;
-    width: 50%;
-}
-
-form>button:hover{
-    border-color: #89328A;
-}
-
-form>button.wow{
-    background-color: #89328A;
-    color: #FBDD72;
-}

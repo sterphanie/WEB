@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
    <link rel="stylesheet" href="styles/styles.css">
+   <link rel="stylesheet" href="https://use.typekit.net/qpn2bje.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1">
     <title>WOWair | 99 verhalen voor op reis</title>
@@ -12,77 +13,168 @@
        <nav>
           <ul>
               <li>
-                  <img src="img/logo.png" alt="">
+                <a href="index.html">
+                <img src="img/logo.png" alt=""> </a>
               </li>
-              <li><a href="alleverhalen.html"></a><h2>Alle verhalen</h2></li>
-              <li><a href="mijnverhalen.html"></a><h2>Mijn verhalen</h2></li>
+              <li><a href="alleverhalen.html">Alle 99</a></li>
+              <li><a href="mijnverhalen.html">Mijn leeslijst</a></li>
           </ul>
        </nav>
     </header>
+
+<section class="heading">
 <h1>wow verhalen</h1>
 <p class="verhalen">99 verhalen voor op reis</p>
+</section>
+
 <!-- Filter opties, one action per screen -->
-    <form>
-        <fieldset id="gevoel"><legend>Gevoel</legend></fieldset>
-        <button>energiek</button>
-        <button>geamuseerd</button>
-        <button>gelukkig</button>
-        <button>geïnspireerd</button>
-        <button>ontspannen</button>
-        <button>ontroerd</button>
-        <button>opgewonden</button>
-        <button class="wow">wow</button>
+   <main>
+        <details open>
+        <summary>gevoel</summary>
+        <form action="get" id="gevoel">
+        <fieldset>
+            <legend>gevoel</legend>
+             <p>Hoe wil je je voelen?</p>
+              <ul>
+                <li>
+                   <input type="radio" id="energiek" name="gevoel">
+                    <label for="energiek">energiek</label>
+                </li>
 
-        <fieldset id="genre">
-        <legend>Genre</legend></fieldset>
-        <button>biografie</button>
-        <button>detective</button>
-        <button>fantasie</button>
-        <button>humor</button>
-        <button>romantiek</button>
-        <button>satire</button>
-        <button>thriller</button>
-        <button class="wow">wow</button>
+                <li>
+                  <input type="radio" id="geamuseerd" name="gevoel">
+                   <label for="geamuseerd">geamuseerd</label></li>
 
-        <fieldset id="tijd">
-        <legend>Tijd</legend></fieldset>
-        <button>1-2 min</button>
-        <button>2-5 min</button>
-        <button>5-10 min</button>
-        <button>10-15 min</button>
+                <li> <input type="radio" id="gelukkig" name="gevoel">
+                   <label for="gelukkig">gelukkig</label></li>
 
-       <fieldset id="kleur">
-       <legend>Kleur</legend></fieldset>
-        <button>licht</button>
-        <button>fel</button>
-        <button>hoog contrast</button>
-        <button>donker</button>
-        <button>zacht</button>
-        <button>laag contrast</button>
-     </form>
+                <li> <input type="radio" id="geïnspireerd" name="gevoel">
+                   <label for="geïnspireerd">geïnspireerd</label></li>
 
+                <li><input type="radio" id="ontspannen" name="gevoel">
+                    <label for="ontspannen">ontspannen</label></li>
+
+                <li> <input type="radio" id="ontroerd" name="gevoel">
+                    <label for="ontroerd">ontroerd</label></li>
+
+                <li><input type="radio" id="opgewonden" name="gevoel">
+                    <label for="opgewonden">opgewonden</label>
+
+                <li class="wow"><input type="radio" class="wow" name="gevoel">
+                    <label for="wow">wow</label>
+            </ul>
+        </fieldset>
+        </form>
+        </details>
+
+        <details>
+        <summary>genre</summary>
+        <form action="get" id="genre">
+        <fieldset>
+        <legend>genre</legend>
+        <ul>
+                <li>
+                   <input type="radio" id="biografie" name="genre">
+                    <label for="biografie">biografie</label>
+                </li>
+
+                <li>
+                  <input type="radio" id="detective" name="genre">
+                   <label for="detective">detective</label></li>
+
+                <li> <input type="radio" id="fantasie" name="genre">
+                   <label for="fantasie">fantasie</label></li>
+
+                <li> <input type="radio" id="humor" name="genre">
+                   <label for="humor">humor</label></li>
+
+                <li><input type="radio" id="romantiek" name="genre">
+                    <label for="romantiek">romantiek</label></li>
+
+                <li> <input type="radio" id="satire" name="genre">
+                    <label for="satire">satire</label></li>
+
+                <li><input type="radio" id="thriller" name="gevoel">
+                    <label for="thriller">thriller</label>
+
+                <li class="wow"><input type="radio" class="wow" name="gevoel">
+                    <label for="wow">wow</label>
+            </ul>
+
+        </fieldset>
+        </form>
+        </details>
+
+        <details>
+        <summary>tijd</summary>
+        <form action="get" id="tijd">
+        <fieldset>
+        <legend>tijd</legend>
+        <ul>
+        <li> <input type="radio" id="1min" name="tijd">
+                <label for="1min">1-2 min</label></li>
+        <li> <input type="radio" id="2min" name="tijd">
+                <label for="2min">2-5 min</label></li>
+        <li> <input type="radio" id="5min" name="tijd">
+                <label for="5min">5-10 min</label></li>
+        <li> <input type="radio" id="10min" name="tijd">
+                <label for="10min">10-15 min</label></li>
+            </ul>
+        </fieldset>
+        </form>
+        </details>
+    </main>
 <!-- verhalen op basis van populariteit als de user naar beneden scrollt -->
-    <section>
-     <h3>of lees ze allemaal</h3>
+    <h2>of lees ze allemaal</h2>
+     <section>
+     <h3>populair</h3>
       <article>
-              <img src="img/tumbnail%20stoned.png" alt="">
+              <img src="img/tumbnail%20stoned.png" alt="stoned">
               <h4>Stoned</h4>
-              <button class="download">Downloaden</button>
-              <p>verhaal Stoned</p>
+              <button class="like"></button>
+              <p>Humor   20 min</p>
       </article>
 
       <article>
-               <img src="img/tumbnail%20stoned.png" alt="">
+               <img src="img/droom.jpeg" alt="droom">
                 <h4>Droom</h4>
-              <button class="download">Downloaden</button>
-              <p>verhaal Stoned</p>
+              <button class="like"></button>
+              <p>Humor   20 min</p>
       </article>
 
       <article>
-           <img src="img/tumbnail%20stoned.png" alt="">
-              <h4>Verliefd</h4>
-              <button class="download">Downloaden</button>
-              <p>verhaal Stoned</p>
+              <img src="img/Kater.jpeg" alt="kater">
+              <h4>Kater</h4>
+              <button class="like"></button>
+              <p>Ik had vandaag bus 21 willen nemen naar het Centraal Station om naar de Openbare Bibliotheek...</p>
+      </article>
+
+      <article>
+               <img src="img/touristische%20route.jpg" alt="toeristische route">
+                <h4>Toeristische route</h4>
+              <button class="like"></button>
+              <p>Als u naar links kijkt, ziet u het Centraal Station. Gebouwd tussen 1881 en 1889 door architect P.H.J... </p>
+      </article>
+
+      <article>
+           <img src="img/recept.jpg" alt="recept">
+              <h4>Recept</h4>
+              <button class="like"></button>
+              <p>Dit gerecht is vrij eenvoudig te maken. Ideaal op een doordeweekse dag als je even niet weet...</p>
+      </article>
+
+      <article>
+               <img src="img/neerslachtig.jpg" alt="neerslachtig">
+                <h4>Neerslachtig</h4>
+              <button class="like"></button>
+              <p>Ach en wee, ik stap de bus uit. Mijn zoon – in wat voor wereld heb ik die jongen neergezet...</p>
+      </article>
+
+      <article>
+           <img src="img/de%20cock.jpg" alt="">
+              <h4>De Cock en het raadsel van het verdwenen boek</h4>
+              <button class="like"></button>
+              <p>Stationsplein, 12.00 uur in de middag De Cock met C-O-C-K. stapte de bus uit...</p>
       </article>
     </section>
 
