@@ -7,39 +7,70 @@ body{
     font-size: 1em;
     line-height: 1.42857143;
     color: #2b4040;
-    margin-top: 10em;
-
+    margin-top: 8em;
+    min-width: 20em;
 }
-
+/*header*/
 section.heading{
-    background-image: url(../img/wow-air.jpg);
+    background-image: url(../img/backgr.png);
     background-repeat: no-repeat;
     background-size: contain;
+    width: 100%;
     height: 30em;
     margin-top: -5em
-
 }
 
 h1{
-    font-size: 2em;
+    font-size: 3em;
     color: white;
-    margin-top: 4em;
-    margin-left: 4em;
-
-}
-p.verhalen{
-    font-size: 1em;
-    color: white;
-    margin-top: 12em;
-    margin-left: -12em;
-
+    margin-top: 3em;
+    margin-left: 3em;
+    margin-bottom: auto;
 }
 
 h2{
     color: #89328A;
 }
 
-/*HEADER*/
+p.verhalen{
+    font-size: 2em;
+    color: white;
+    margin-top: 0;
+    margin-left: 4em;
+
+}
+
+/*organisatie filter*/
+ul.organisatie{
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+li.organisatie:first-child{
+    padding: 0.4em 1em 0.4em 1em;
+    background-color: #FBDD72;
+    color: #2b4040;
+    font-size: 1em;
+    list-style: none;
+    text-align: center;
+    border-radius: 40%;
+}
+
+li.organisatie{
+    margin: 1em;
+    padding: .5em;
+    color: #2b4040;
+    font-size: 1em;
+    list-style: none;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*nav*/
 header{
     position: fixed;
     top:0;
@@ -50,11 +81,8 @@ header{
     margin: 0;
 }
 
-@media (max-width:25em){
-    header{
-        bottom: 0;
-        top: initial;
-    }
+a {
+    text-decoration: none;
 }
 
 header ul{
@@ -63,9 +91,8 @@ header ul{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    max-height: 3em;
-    margin: 0;
-
+    max-height: 3.5em;
+    margin-top: -0.5em;
 }
 
 header li:first-child{
@@ -74,33 +101,77 @@ header li:first-child{
 
 header li{
     margin: 1em;
+
 }
 
 header img {
     max-height: 3em;
     max-width: 3em;
-    display: block;
-    margin: 0em 1em;
 }
 
-/*FILTER*/
+/*tablet size*/
+@media (max-width:55em){
+     section.heading{
+        margin-top: -6em;
+        margin-bottom: 4em;
+    }
+    section.heading>h1{
+        font-size: 2em;
+        margin-top: 4em;
+        margin-left: 2em;
+    }
+    p.verhalen{
+        font-size: 1em;
+        margin-top: 11em;
+    }
+}
+
+/*phone size*/
+@media (max-width:40em){
+    header{
+        bottom: 0;
+        top: initial;
+        background-color: #89328A;
+    }
+    header a{
+        color: white;
+    }
+
+    section.heading{
+        margin-top: -8em;
+        margin-bottom: 4em;
+    }
+
+    section.heading>h1{
+        margin-top: 1em;
+        margin-left: 2em;
+    }
+
+    p.verhalen{
+        position: inherit;
+        margin-top: 4em;
+    }
+}
+
+
+/*filter*/
 main{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: -28em;
-
+    margin-right: 7em;
 }
 
 details{
     width: 20em;
     background-color: white;
-
 }
 
 form{
     width: 100%;
 }
+
 form, summary:-webkit-details-marker {
     display: none;
     background-color: white;
@@ -108,6 +179,7 @@ form, summary:-webkit-details-marker {
     display: flex;
     flex-wrap: wrap;
 }
+
 legend{
     display: none;
 }
@@ -116,6 +188,7 @@ fieldset{
     border: none;
     min-width: 100%;
 }
+
 summary{
     background-color: #89328A;
     color: white;
@@ -129,12 +202,14 @@ form input[type=radio] {
     left:-666em;
 }
 
+/*grid*/
 form ul{
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding:0;
     min-width: 100%;
 }
+
 form li{
     background-color: #FBDD72;
     color: #2b4040;
@@ -154,9 +229,8 @@ form li.wow{
     color: #FBDD72;
 }
 
-/*VERHALEN*/
-
-section{
+/*verhalen*/
+section.schilderijen{
     display: flex;
     flex-wrap: wrap;
 }
@@ -164,9 +238,7 @@ section{
 section h2{
     width: 100%;
 }
-section h3 {
-    display: none;
-}
+
 article{
     display: block;
     border: 1px solid gray;
@@ -185,7 +257,11 @@ article img{
     object-position: center center;
 }
 
+article>p{
+    margin-right: 5em;
+}
 
+/*buttons*/
 button.like{
     position: absolute;
     top: 13em;
@@ -196,7 +272,162 @@ button.like{
     background-size: cover;
 }
 
-h4{
-    border-bottom: solid #89328A;
+button.plus{
+    background-image: url(../img/add.png);
+    background-size: cover;
+    background-position: center;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    top: 17.5em;
+    left: 23em;
 }
+
+button.plus:focus{
+    background-image: url(../img/checked.png);
+    background-size: cover;
+    background-position: center;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    top: 17.5em;
+    left: 23em;
+}
+
+/* download toggle*/
+label.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+/* hide checkbox */
+label.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* toggle */
+span.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #9C9B9B;
+  border-color: #89328A;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+span.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #F2BE4D;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + span.slider {
+  background-color: #89328A;
+}
+input:checked + span.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+span.slider.round {
+  border-radius: 34px;
+}
+span.slider.round:before {
+  border-radius: 50%;
+}
+
+/*LEESLIJST*/
+h1.leeslijst{
+    color: #89328A;
+    margin-left: .5em;
+}
+
+section.downloaden{
+    display: flex;
+    flex-wrap: wrap;
+}
+section.downloaden>p{
+    margin: 0 2em;
+}
+
+
+/*verhaalpagina*/
+
+h3{
+    font-size: 3em;
+    color: #2b4040;
+    margin-top: -1em;
+}
+
+section.info{
+    margin: 1em;
+}
+
+section.info>p{
+    margin-top: -3em;
+}
+
+button.plusstoned{
+    background-image: url(../img/add.png);
+    background-size: cover;
+    background-position: center;
+    height: 4em;
+    width: 4em;
+    position: absolute;
+    top: 10em;
+    right: 3em;
+}
+
+button.plusstoned:focus{
+    background-image: url(../img/checked.png);
+    background-size: cover;
+    background-position: center;
+    height: 4em;
+    width: 4em;
+    position: absolute;
+    top: 10em;
+    right: 3em;
+}
+
+button.likestoned{
+    position: absolute;
+    left: 1em;
+    height: 3em;
+    width: 9em;
+    background-image: url(../img/likebutton.png);
+    background-size: cover;
+}
+button.likestoned:focus{
+    position: absolute;
+    left: 1em;
+    height: 3em;
+    width: 9em;
+    background-image: url(../img/likebutton1.png);
+    background-size: cover;
+}
+
+img.verhaal{
+    display: block;
+    margin: auto;
+    margin-top: 3.7em;
+}
+
+@media (max-width:40em){
+    img.verhaal{
+        display: block;
+        width: 100%;
+        margin-bottom: 4em;
+    }
+}
+
 
