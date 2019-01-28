@@ -2,90 +2,65 @@
     box-sizing: border-box;
 }
 
-body{
+body{/*huisstijl font van wow air*/
     font-family: museo-sans,"Helvetica Neue",Helvetica,sans-serif;
     font-size: 1em;
     line-height: 1.42857143;
     color: #2b4040;
-    margin-top: 8em;
-    min-width: 20em;
-}
-/*header*/
-section.heading{
-    background-image: url(../img/backgr.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 30em;
-    margin-top: -5em
+    margin: 0;
+    padding-top: 4rem;
 }
 
-h1{
-    font-size: 3em;
-    color: white;
-    margin-top: 3em;
-    margin-left: 3em;
-    margin-bottom: auto;
+/*nav*/
+@media (max-width: 40em){/*small schreen*/
+    header#header>nav{
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        background-color: #89328A;
+    }
+    header#header>nav ul{
+        align-items: flex-start;
+        height: 3em;
+        border-bottom: none;
+    }
+
+    header#header>nav a{
+        color: white;
+    }
+
+    section.heading>h1{
+        margin-top: -2.5em;
+    }
+
+    section.schilderijen{
+        margin-bottom: 4em;
+    }
 }
 
-h2{
-    color: #89328A;
-}
-
-p.verhalen{
-    font-size: 2em;
-    color: white;
-    margin-top: 0;
-    margin-left: 4em;
-
-}
-
-/*organisatie filter*/
-ul.organisatie{
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-li.organisatie:first-child{
-    padding: 0.4em 1em 0.4em 1em;
-    background-color: #FBDD72;
-    color: #2b4040;
-    font-size: 1em;
-    list-style: none;
-    text-align: center;
-    border-radius: 40%;
-}
-
-li.organisatie{
-    margin: 1em;
-    padding: .5em;
-    color: #2b4040;
-    font-size: 1em;
-    list-style: none;
-    text-align: center;
+@media (min-width: 40em){/*borderbottom voor nav*/
+header#header>nav ul{
+    align-items: flex-start;
+    height: 4em;
+    background-color: white;
+    border-bottom: 1px solid #d3d3d3;
+    }
 }
 
 a {
     text-decoration: none;
 }
 
-/*nav*/
-header{
+header#header{
     position: fixed;
     top:0;
     left:0;
     right:0;
-    background: white;
     z-index: 1;
     margin: 0;
 }
 
-a {
-    text-decoration: none;
-}
-
-header ul{
+header#header ul{
     list-style: none;
     padding: 0;
     display: flex;
@@ -95,81 +70,126 @@ header ul{
     margin-top: -0.5em;
 }
 
-header li:first-child{
-    margin-right: auto;
+header#header li:first-child{
+    margin-left: 50%;
+    box-sizing: border-box;
+    margin:
 }
 
-header li{
+header#header li:nth-child(2){
+    padding-top: 1em;
+}
+header#header li:nth-child(3){
+    padding-top: 1em;
+}
+
+header#header li{
     margin: 1em;
-
 }
 
-header img {
+header#header img {
     max-height: 3em;
     max-width: 3em;
+    margin-left: -2em;
 }
 
-/*tablet size*/
-@media (max-width:55em){
-     section.heading{
-        margin-top: -6em;
-        margin-bottom: 4em;
+/*toevoegen notificatie*/
+nav section{
+    position: absolute;
+    right: 1em;
+    top: -.5em;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+    background-color: #FBDD72;
+    color: #89328A;
+    display: none;
+}
+
+nav section.aan{ /*de transitie gaat langzamer*/
+    display: block;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
     }
-    section.heading>h1{
-        font-size: 2em;
-        margin-top: 4em;
-        margin-left: 2em;
-    }
-    p.verhalen{
-        font-size: 1em;
-        margin-top: 11em;
+    100% {
+        opacity: 1;
     }
 }
 
-/*phone size*/
-@media (max-width:40em){
-    header{
-        bottom: 0;
-        top: initial;
-        background-color: #89328A;
+/* intro van verhalenwebsite */
+section.heading{
+    margin: 0;
+    color: #fff;
+    z-index: 999;
+    min-height: 15em;
+    padding: 0 1em;
+}
+@media(max-width: 40em){/*achtergrond komt boven het filter*/
+    section.heading{
+        background-image: url(../img/backgr.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
-    header a{
+    section.heading>h1 {
+        font-size: 3em;
+        font-weight: 100;
         color: white;
+        display: block;
+        padding-top: 9rem;
+    }
+}
+
+p.verhalen{
+    margin-top: -3em;
+    display: block;
+}
+
+section.heading{
+    text-align: center;
+    flex-grow: 2;
+
+}
+
+/* als het scherm groter wordt, zal de header links staan van de filter */
+@media (min-width: 40em){
+    header + div {
+        display: flex;
+        justify-content: space-between;
+        background-image: url(../img/backgr.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     section.heading{
-        margin-top: -8em;
-        margin-bottom: 4em;
+        text-align: center;
+        flex-grow: 2;
     }
 
-    section.heading>h1{
-        margin-top: 1em;
-        margin-left: 2em;
+    h1{
+        padding-top: 0;
     }
-
-    p.verhalen{
-        position: inherit;
-        margin-top: 4em;
-    }
+    section.heading>h1 {
+        font-size: 3em;
+        font-weight: 100;
+        color: white;
+        display: block;
+     }
 }
 
-
-/*filter*/
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: -28em;
-    margin-right: 7em;
-}
-
+/* filter */
 details{
-    width: 20em;
     background-color: white;
-}
-
-form{
-    width: 100%;
+    min-width: 20em;
 }
 
 form, summary:-webkit-details-marker {
@@ -196,17 +216,15 @@ summary{
     border: none;
 }
 
-/* radio input buiten beeld*/
-form input[type=radio] {
+form input[type=radio] {/* radio input buiten beeld*/
     position: absolute;
     left:-666em;
 }
 
-/*grid*/
 form ul{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding:0;
+    padding: 0;
     min-width: 100%;
 }
 
@@ -216,7 +234,7 @@ form li{
     font-size: 1em;
     border: 0.1em solid #FBDD72;
     list-style: none;
-    margin: .2em;
+    margin: .2em .5em;
     text-align: center;
 }
 
@@ -224,90 +242,195 @@ form li:hover{
     border-color: #89328A;
 }
 
-form li.wow{
+form li.wow{ /* gaat naar verhaal*/
     background-color: #89328A;
+
+}
+form li.wow>a, li.wow>a:visited{/* link is visited, maar nog leesbaar tegen paarse achtergrond*/
     color: #FBDD72;
 }
 
-/*verhalen*/
-section.schilderijen{
-    display: flex;
-    flex-wrap: wrap;
+section#filter{
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-section h2{
+
+/*organisatie filter*/
+ul.organisatie{
+    list-style: none;
+    padding: 1em;
+    display: flex;
+}
+
+ul.organisatie>li>a{
+    color: #2b4040;
+}
+
+ul.organisatie>li{
+    padding: 0.4em 1em 0.4em 1em;
+    color: #2b4040;
+    font-size: 1em;
+    list-style: none;
+    text-align: center;
+}
+
+ul.organisatie>li#az,#populair,#nieuw{/* organisatie filters ID die linken met de paginas*/
+    padding: 0.4em 1em 0.4em 1em;
+    background-color: #FBDD72;
+    color: #2b4040;
+    font-size: 1em;
+    list-style: none;
+    text-align: center;
+    border-radius: 40%;
+}
+
+ul.organisatie>li{
+    margin: 1em;
+    padding: .5em;
+    color: #2b4040;
+    font-size: 1em;
+    list-style: none;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+section>h2{
+    margin-left: 1em;
     width: 100%;
 }
 
+/*  verhalen grid */
+section.schilderijen {
+    display: grid;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 40em) {
+    section.schilderijen{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 60em){
+    section.schilderijen{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* verhaal blokje */
 article{
     display: block;
     border: 1px solid gray;
     background-color: white;
-    max-width: 20em;
-    margin: 1em;
     position: relative;
-
 }
 
 article img{
     width:100%;
-    max-width: 20em;
     height: 10em;
     object-fit: cover;
     object-position: center center;
 }
 
-article>p{
-    margin-right: 5em;
+article>section{
+    display: grid;
+    grid-template-columns: 100%;
 }
 
-/*buttons*/
-button.like{
-    position: absolute;
-    top: 13em;
-    left: 1em;
-    height: 2em;
-    width: 5em;
-    background-image: url(../img/1003.png);
-    background-size: cover;
+section>article>header{
+    width: 100%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 66% 33%;
+    column-gap: 1em;
+}
+section>article>header h4{
+    font-size: 1.5em;
+    font-weight: 100;
+    margin: 0;
 }
 
-button.plus{
-    background-image: url(../img/add.png);
-    background-size: cover;
-    background-position: center;
-    height: 5em;
-    width: 5em;
-    position: absolute;
-    top: 17.5em;
-    left: 23em;
-}
-
-button.plus:focus{
-    background-image: url(../img/checked.png);
+/* Toevoegen aan leeslijst button*/
+button.toevoegen{
+    background-image: url(../img/plus.png);
     background-size: cover;
     background-position: center;
-    height: 5em;
-    width: 5em;
-    position: absolute;
-    top: 17.5em;
-    left: 23em;
+    width: 4em;
+    height: 4em;
+    color: transparent;
+    position: relative;
+    margin-left: 25%;
+    margin-top: .5em;
 }
 
-/* download toggle*/
+button.toevoegen::after {
+    content: 'toevoegen';
+    position: absolute;
+    font-size: 1em;
+    bottom: -1rem;
+    left: 0;
+    right:0;
+    border-bottom: 3px solid #FBDD72
+}
+
+button.toevoegen.toegevoegd{
+    background-image: url(../img/vinkje.png);
+    background-size: cover;
+    background-position: center;
+    width: 4em;
+    height: 4em;
+    margin-left: 25%;
+    margin-top: .5em;
+}
+
+/* aantal likes voor het verhaal */
+section.schilderijen>article>footer>div{
+    position: absolute;
+    margin-top: -2.7em;
+    margin-left: 1em;
+    background: #FBDD72;
+    padding: .5em 1em .5em 2.5em;
+    background-image: url(../img/duimpje.png);
+    background-size: 1.9em;
+    background-repeat: no-repeat;
+}
+
+/* mijn leeslijst */
+h1.leeslijst{
+    color: #89328A;
+    margin: .5em;
+    font-size: 3em;
+    font-weight: 100;
+    display: block;
+}
+
+section>p.lijst{
+    margin: 1.5em;
+}
+section.downloaden{
+    display: flex;
+    flex-wrap: wrap;
+}
+section.downloaden>p{
+    margin: 0 1em;
+}
+/* download button bron: https://www.w3schools.com/howto/howto_css_switch.asp*/
 label.switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 4em;
+  height: 2.2em;
 }
-/* hide checkbox */
 label.switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-/* toggle */
+/* button */
 span.slider {
   position: absolute;
   cursor: pointer;
@@ -317,117 +440,131 @@ span.slider {
   bottom: 0;
   background-color: #9C9B9B;
   border-color: #89328A;
-  -webkit-transition: .5s;
   transition: .5s;
 }
 span.slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 1.7em;
+  width: 1.7em;
+  left: .26em;
+  bottom: .26em;
   background-color: #F2BE4D;
-  -webkit-transition: .4s;
   transition: .4s;
 }
 input:checked + span.slider {
   background-color: #89328A;
 }
 input:checked + span.slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  transform: translateX(1.7em);
 }
 span.slider.round {
-  border-radius: 34px;
+  border-radius: 1.2em;
 }
 span.slider.round:before {
   border-radius: 50%;
 }
 
-/*LEESLIJST*/
-h1.leeslijst{
-    color: #89328A;
-    margin-left: .5em;
-}
-
+/* verhalen downloaden */
 section.downloaden{
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    padding: 1em;
+    margin-right: 2em;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    column-gap: 1em;
 }
-section.downloaden>p{
-    margin: 0 2em;
-}
-
-
-/*verhaalpagina*/
-
-h3{
-    font-size: 3em;
-    color: #2b4040;
-    margin-top: -1em;
+p.download{
+    text-align: right;
+    padding-top: .5em;
 }
 
-section.info{
-    margin: 1em;
+/* verhaal is aan het downloaden */
+section.schilderijen.downloading img {
+    filter: opacity(50%);
 }
 
-section.info>p{
-    margin-top: -3em;
+/*verhaal stoned pagina*/
+section.verhaalstoned{
+    display: grid;
+    grid-template-columns: 80% 10%;
 }
 
-button.plusstoned{
-    background-image: url(../img/add.png);
-    background-size: cover;
-    background-position: center;
-    height: 4em;
-    width: 4em;
+section.verhaalstoned>section.stonedbutton{
+    padding-top: 2em;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+section>button+div{
+    margin-right: 0;
+}
+
+/*likes bij verhaal*/
+section.stonedbutton>div{
     position: absolute;
-    top: 10em;
-    right: 3em;
+    max-height: 2em;
+    max-width: 6em;
+    text-align: center;
+    margin-top: 9em;
+    background: #FBDD72;
+    padding: .5em 1em .5em 2.5em;
+    background-image: url(../img/duimpje.png);
+    background-size: 1.9em;
+    background-repeat: no-repeat;
 }
 
-button.plusstoned:focus{
-    background-image: url(../img/checked.png);
+/* Stoned */
+main{/* achtergrond */
+    background-image: url(../img/achtergr.png);
     background-size: cover;
-    background-position: center;
-    height: 4em;
-    width: 4em;
-    position: absolute;
-    top: 10em;
-    right: 3em;
+    min-height: 250em;
 }
 
-button.likestoned{
-    position: absolute;
-    left: 1em;
-    height: 3em;
-    width: 9em;
-    background-image: url(../img/likebutton.png);
-    background-size: cover;
+section.verhaal{
+    padding: 1em;
 }
-button.likestoned:focus{
-    position: absolute;
-    left: 1em;
-    height: 3em;
-    width: 9em;
-    background-image: url(../img/likebutton1.png);
-    background-size: cover;
+/* titel */
+div.s{
+    background-image: url(../img/des.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 10rem;
 }
-
-img.verhaal{
-    display: block;
-    margin: auto;
-    margin-top: 3.7em;
+div.t{
+    background-image: url(../img/det.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 10rem;
 }
 
-@media (max-width:40em){
-    img.verhaal{
-        display: block;
-        width: 100%;
-        margin-bottom: 4em;
-    }
+div.o{
+    background-image: url(../img/deo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 10rem;
 }
+div.n{
+    background-image: url(../img/den.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 10rem;
+}
+div.e{
+    background-image: url(../img/dee.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 10rem;
+}
+div.d{
+    background-image: url(../img/ded.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 10rem;
+}
+section.verhaal>p{/* verhaal */
+    color: #FBDD72;
+}
+
 
 
