@@ -1,5 +1,8 @@
 # WEB
 project web jaar 2
+Op de website kan je voor, tijdens en na je reis verhalen opzoeken, opslaan en lezen. De verhalen zijn uniek vormgegeven.
+De gebruiker kan een filter en sorteerschema gebruiken om leuke verhalen te vinden. Ook kan hij/zij ervoor kiezen om verrast te worden met een leuk verhaal door op de WOW button te klikken.
+De verhalen kunnen dat toegevoegd worden aan een leeslijst die vervolgens gedownload kan worden op elk gewenst device. Zo heeft de gebruiker altijd de leukste verhalen bij de hand.
 
 code opnieuw gemaakt. Small screen design first en GRID!
 
